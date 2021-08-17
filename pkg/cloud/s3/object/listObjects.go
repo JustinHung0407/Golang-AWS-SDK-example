@@ -32,8 +32,8 @@ func ListObjectsV2(svc *s3.S3, bucket string, prefix string) {
 
 	fmt.Println("Found", len(resp.Contents), "items in bucket", bucket)
 	fmt.Println("ContinuationToken: ", resp.ContinuationToken)
-	fmt.Println("IsTruncated: ", &resp.IsTruncated)
-	fmt.Println("NextContinuationToken: ", &resp.NextContinuationToken)
+	fmt.Println("IsTruncated: ", *resp.IsTruncated)
+	fmt.Println("NextContinuationToken: ", *resp.NextContinuationToken)
 	fmt.Println("")
 }
 
@@ -61,8 +61,8 @@ func ListObjects(svc *s3.S3, bucket string, prefix string) {
 	}
 
 	fmt.Println("Found", len(resp.Contents), "items in bucket", bucket)
-	fmt.Println("IsTruncated: ", &resp.IsTruncated)
-	fmt.Println("NextMarker: ", &resp.NextMarker)
+	fmt.Println("IsTruncated: ", *resp.IsTruncated)
+	fmt.Println("NextMarker: ", *resp.NextMarker)
 	fmt.Println("")
 }
 
